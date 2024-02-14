@@ -1,17 +1,15 @@
-
-import { StyleSheet } from 'react-native';
+import React from 'react';
+import { LogBox, StyleSheet } from 'react-native';
 import BottomBar from './src/Navigation/BottomBar';
-import { NavigationContainer } from '@react-navigation/native';
 import { Provider } from 'react-redux';
 import store from './src/Redux/Store';
 import { NativeBaseProvider } from 'native-base';
 export default function App() {
+  LogBox.ignoreAllLogs();
   return (
     <NativeBaseProvider>
-    <Provider store={store}>
-    <NavigationContainer >
+      <Provider store={store}>
     <BottomBar/>
-    </NavigationContainer>
     </Provider>
     </NativeBaseProvider>
   );
