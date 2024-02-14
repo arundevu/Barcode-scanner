@@ -4,10 +4,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faCartShopping,faBarcode } from "@fortawesome/free-solid-svg-icons";
 import Barcode from "../Page/BarCode";
 import Cart from "../Page/Cart";
-import { NavigationContainer } from "@react-navigation/native";
 import { useSelector } from "react-redux";
-{/* <FontAwesomeIcon icon={faCartShopping} /> */}
-{/* <FontAwesomeIcon icon={faBarcode} /> */}
+import { NavigationContainer } from "@react-navigation/native";
 const BottomBar=()=>{
     const Tab = createMaterialBottomTabNavigator();
     const bottombarDatas = [
@@ -19,6 +17,7 @@ const BottomBar=()=>{
       return state.data.product;
 });
     return(
+      <NavigationContainer >
 
         <Tab.Navigator
         initialRouteName="Home"
@@ -46,9 +45,11 @@ const BottomBar=()=>{
               }}
              
             />
+
           );
         })}
       </Tab.Navigator>
+      </NavigationContainer>
     )
 }
 
