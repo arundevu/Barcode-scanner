@@ -1,5 +1,5 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+
+import { StyleSheet } from 'react-native';
 import BottomBar from './src/Navigation/BottomBar';
 import { NavigationContainer } from '@react-navigation/native';
 import { Provider } from 'react-redux';

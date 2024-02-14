@@ -1,15 +1,12 @@
+import React, { useState } from "react";
 import { Camera } from "expo-camera";
-import React, { useEffect, useState } from "react";
-import { View,StyleSheet,Text, Button } from "react-native";
+import { View,StyleSheet, Button } from "react-native";
 import QRCode from "react-native-qrcode-svg";
 import CameraPermission from "../Component/Camerapermission";
-// import * as Permissions from 'expo-permissions';
-import { useDispatch } from "react-redux";
 
 const Barcode =()=>{
     const data = {name:'abc',price:'20',gst:'2%',qty:0}
     const [qrContent, setQrContent] = useState();
-    const [cameraPermission, setCameraPermission] = useState<any>(null);
     const [hasPermission, setHasPermission] = useState<any>(null);
     const [scanned, setScanned] = useState(false);
     const [showScanner, setShowScanner] = useState(false);

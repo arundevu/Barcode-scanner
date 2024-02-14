@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { View,StyleSheet,Text, TextInput, Button, Modal } from "react-native";
-import { UseSelector, useDispatch, useSelector } from "react-redux";
-import { DelProduct, GetProduct } from "../Redux/GetProduct";
+import {  useDispatch, useSelector } from "react-redux";
+import { DelProduct } from "../Redux/GetProduct";
 
 const Cart =()=>{
     const data:any[] = []
     const[cartData ,setCartData] = useState<any>([])
     const[sampleCartData ,setSampleCartData] = useState<any>([])
-    const [number, setNumber] = useState('');
     const [quantity, setQuantity] = useState(1);
     const [total, setTotal] = useState(0);
     const [index, setIndex] = useState<any>();

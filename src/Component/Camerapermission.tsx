@@ -1,8 +1,8 @@
-// import { CameraView, Camera } from "expo-camera/next";
+
+import React, { useState } from "react";
 import { Camera } from "expo-camera";
-import React, { useState, useEffect, useRef } from "react";
-import { Text, View, StyleSheet, TextInput, Modal } from "react-native";
-import { BottomSheet, Button, ListItem } from "@rneui/themed";
+import { Text, View, StyleSheet, Modal } from "react-native";
+import { BottomSheet, Button} from "@rneui/themed";
 import { Inputs } from "./Input";
 import { GetProduct } from "../Redux/GetProduct";
 import { Select } from "native-base";
