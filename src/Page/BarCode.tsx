@@ -1,7 +1,6 @@
 import { Camera } from "expo-camera";
 import React, { useEffect, useState } from "react";
 import { View,StyleSheet,Text, Button } from "react-native";
-import QRCodeScanner from "react-native-qrcode-scanner";
 import QRCode from "react-native-qrcode-svg";
 import CameraPermission from "../Component/Camerapermission";
 // import * as Permissions from 'expo-permissions';
@@ -15,6 +14,7 @@ const Barcode =()=>{
     const [scanned, setScanned] = useState(false);
     const [showScanner, setShowScanner] = useState(false);
     const[cart ,setCart] = useState<any>()
+    
     const getCameraPermissions = async () => {
         setShowScanner(true)
       const { status } = await Camera.requestCameraPermissionsAsync();
@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
       buttonContainer: {
         marginTop: 20,
         height:'100%',
-        backgroundColor:'red',
+        backgroundColor:'rgba(0, 60, 49, 1)',
         width:'100%'
       },
     

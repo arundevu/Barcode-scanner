@@ -29,17 +29,22 @@ const Cart =()=>{
     }, [product]);
 
     useEffect(()=>{
+      console.log(cartData ,'cartData');
+      
+      if(cartData.length > 0){
         const totalPrice = cartData.reduce((accumulator, currentItem) => {
-            const price = parseFloat(currentItem.price);
-            const gstPercentage = parseFloat(currentItem.gst.replace('%', '')) / 100;
-            const totalPriceWithGST = price * (1 + gstPercentage);
-            return accumulator + totalPriceWithGST;
-          }, 0);
-          setTotal(totalPrice);
+          const price = parseFloat(currentItem.price);
+          const gstPercentage = parseFloat(currentItem.gst.replace('%', '')) / 100;
+          const totalPriceWithGST = price * (1 + gstPercentage);
+          return accumulator + totalPriceWithGST;
+        }, 0);
+        setTotal(totalPrice);
+      }
+      
     },[quantity])
 
     const handleIncrement = (i: any) => {
-       
+      setQuantity(quantity + 1)
         const updatedData = cartData.map((item, index) => {
             if (index === i) {
                 const updatedItem = {...item}; 
@@ -52,7 +57,7 @@ const Cart =()=>{
         console.log(updatedData ,'updatedData');
         
         setCartData(updatedData);
-        setQuantity(quantity + 1)
+       
         
     };
 
